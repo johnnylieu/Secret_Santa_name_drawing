@@ -6,9 +6,13 @@
         </form>
         <script type="text/JavaScript">
             let nameInput = document.getElementById("nameInput");
-            let namesList = []
+            let namesList = [];
+
             function addName () {
                 console.log("adding name");
+                nameLIst.push(nameInput.value);
+                nameInput.value = '';
+                console.log(namesList);
             }
         </script>
     </body>
