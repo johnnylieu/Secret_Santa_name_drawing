@@ -1,12 +1,12 @@
 <html>
     <body>
-        <form onsubmit="addName()">
+        <form onsubmit="addName(); return false">
             <input type="text" id="nameInput">
             <input type="submit" value="Add Name">
         </form>
         <script type="text/JavaScript">
             let nameInput = document.getElementById("nameInput");
-
+            let namesList = []
             function addName () {
                 console.log("adding name");
             }
