@@ -14,12 +14,12 @@
             let namesList = [];
 
             function displayNames() {
-                let html = 'ul';
+                let html = '<ul>';
                 for (let name of namesList) {
                     html += '<li>' + name + '</li>';
                 }
                 html += '</ul>';
-                nameListDisplay.innerHtml = html;
+                nameListDisplay.innerHTML = html;
             };
 
             function addName () {
