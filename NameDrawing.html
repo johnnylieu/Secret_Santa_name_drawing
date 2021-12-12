@@ -6,7 +6,7 @@
         </form>
 
         <button onclick="calculate()">Draw Names!</button>
-
+        
         <div id="nameListDisplay"></div>
 
         <div id="assignmentDisplay"></div>
@@ -61,7 +61,7 @@
             };
 
             function addName () {
-                if (nameInput.value.length == 0) {
+                if (nameInput.value.length == 0 || nameInput.value.trim().length == 0) {
                     alert("Please enter a name");
                     return false;
                 };
