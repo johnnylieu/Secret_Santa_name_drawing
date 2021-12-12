@@ -27,6 +27,10 @@
             displayNames();
 
             function calculate () {
+                if (namesList.length == 1) {
+                    alert("Please add more names");
+                    return false;
+                };
                 assigned = [];
                 for (let i = 0; i < namesList.length; i++) {
                     let randomIndex = -1;
