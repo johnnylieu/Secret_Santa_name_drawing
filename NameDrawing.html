@@ -9,13 +9,26 @@
 
         <script type="text/JavaScript">
             let nameInput = document.getElementById("nameInput");
+            let nameListDisplay = document.getElementById("nameListDisplay");
+
             let namesList = [];
+
+            function displayNames() {
+                let html = 'ul';
+                for (let name of namesList) {
+                    html += '<li>' + name + '</li>';
+                }
+                html += '</ul>';
+                nameListDisplay.innerHtml = html;
+            };
 
             function addName () {
                 console.log("button clicked");
                 namesList.push(nameInput.value);
                 nameInput.value = '';
                 console.log(namesList);
+                displayNames();
+                console.log(displayNames());
             };
         </script>
     </body>
