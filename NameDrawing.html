@@ -18,15 +18,19 @@
 
             let namesList = [];
 
+            displayNames();
+
             function calculate () {
                 let assigned = [];
                 for (let i = 0; i < namesList.length; i++) {
                     let randomIndex = -1;
-                    while (randomIndex != -1 && randomIndex != i) {
+                    while (randomIndex == -1 || randomIndex == i || assigned.indexOf(namesList[randomIndex]) != -1) {
                         randomIndex = Math.floor(Math.random() * namesList.length);
                     };
                     assigned.push(namesList[randomIndex]);
                 };
+                console.log(namesList);
+                console.log(assigned);
             };
 
             function displayNames() {
