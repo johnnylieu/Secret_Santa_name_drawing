@@ -61,7 +61,10 @@
             };
 
             function addName () {
-                console.log("button clicked");
+                if (nameInput.value.length == 0) {
+                    alert("Please enter a name");
+                    return false;
+                };
                 namesList.push(nameInput.value);
                 nameInput.value = '';
                 console.log(namesList);
