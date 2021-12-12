@@ -19,7 +19,14 @@
             let namesList = [];
 
             function calculate () {
-
+                let assigned = [];
+                for (let i = 0; i < namesList.length; i++) {
+                    let randomIndex = -1;
+                    while (randomIndex != -1 && randomIndex != i) {
+                        randomIndex = Math.floor(Math.random() * namesList.length);
+                    };
+                    assigned.push(namesList[randomIndex]);
+                };
             };
 
             function displayNames() {
