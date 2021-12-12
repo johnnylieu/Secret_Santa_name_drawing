@@ -4,11 +4,15 @@
             <input type="text" id="nameInput">
             <input type="submit" value="Add Name">
         </form>
+
+        <div id="nameListDisplay"></div>
+
         <script type="text/JavaScript">
             let nameInput = document.getElementById("nameInput");
             let namesList = [];
 
             function addName () {
+                console.log("button clicked");
                 namesList.push(nameInput.value);
                 nameInput.value = '';
                 console.log(namesList);
