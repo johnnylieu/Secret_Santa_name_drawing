@@ -5,11 +5,16 @@
             <input type="submit" value="Add Name">
         </form>
 
+        <button onclick="calculate()">Draw Names!</button>
+
         <div id="nameListDisplay"></div>
+
+        <div id="assignmentDisplay"></div>
 
         <script type="text/JavaScript">
             let nameInput = document.getElementById("nameInput");
             let nameListDisplay = document.getElementById("nameListDisplay");
+            let assignmentDisplay = document.getElementById("assignmentDisplay");
 
             let namesList = [];
 
