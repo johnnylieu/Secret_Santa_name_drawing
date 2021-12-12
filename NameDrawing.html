@@ -10,27 +10,45 @@
         <div id="nameListDisplay"></div>
 
         <div id="assignmentDisplay"></div>
+        
+        <div id="calculatedDisplay"></div>
 
         <script type="text/JavaScript">
             let nameInput = document.getElementById("nameInput");
             let nameListDisplay = document.getElementById("nameListDisplay");
             let assignmentDisplay = document.getElementById("assignmentDisplay");
+            let calculatedDisplay = document.getElementById("calculatedDisplay");
 
             let namesList = [];
+            let assigned = [];
 
             displayNames();
 
             function calculate () {
-                let assigned = [];
+                assigned = [];
                 for (let i = 0; i < namesList.length; i++) {
                     let randomIndex = -1;
+                    let attempts = 0;
                     while (randomIndex == -1 || randomIndex == i || assigned.indexOf(namesList[randomIndex]) != -1) {
                         randomIndex = Math.floor(Math.random() * namesList.length);
+                        attempts++;
+                        if (attempts >= namesList.length) {
+                            calculate();
+                            return;
+                        };
                     };
                     assigned.push(namesList[randomIndex]);
                 };
-                console.log(namesList);
-                console.log(assigned);
+                displayCalculated();
+            };
+
+            function displayCalculated() {
+                let html = '<ul>';
+                for (let i =0; i<namesList.length; i++) {
+                    html += '<li>' + namesList[i] + ' is paired with ' + assigned[i] + '</li>';
+                }
+                html += '</ul>';
+                calculatedDisplay.innerHTML = html;
             };
 
             function displayNames() {
